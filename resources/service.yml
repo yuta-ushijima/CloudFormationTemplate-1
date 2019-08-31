@@ -46,9 +46,9 @@ Resources:
       NetworkInterfaces:
         - AssociatePublicIpAddress: "true"
           DeviceIndex: "0"
-          SubnetId: !Ref HelloWorldRailsSubnetAZ1a      
+          SubnetId: Ref HelloWorldRailsSubnetAZ1a      
           GroupSet: 
-           - !Ref HelloWorldRailsEc2SecurityGroup
+           - Ref HelloWorldRailsEc2SecurityGroup
       Tags:
         - Key: Name
           Value: hello-world-rails-ec2
@@ -134,10 +134,6 @@ Resources:
           FromPort: 22
           ToPort: 22
           CidrIp: 0.0.0.0/0
-        - IpProtocol: tcp
-          FromPort: 22
-          ToPort: 22
-          CidrIp: 111.239.255.229/32
         # Railsのアプリケーションサーバー用
         - IpProtocol: tcp
           FromPort: 3000
