@@ -44,6 +44,10 @@ Resources:
       KeyName: !Ref KeyPair
       Monitoring: false
       InstanceInitiatedShutdownBehavior: stop
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: "true"
+          SubnetId: !Ref HelloWorldRailsSubnetAZ1a      
+          GroupSet: !Ref HelloWorldRailsEc2SecurityGroup
       SecurityGroupIds:
         - !Ref HelloWorldRailsEc2SecurityGroup
       Tags:
