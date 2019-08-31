@@ -46,6 +46,7 @@ Resources:
       InstanceInitiatedShutdownBehavior: stop
       NetworkInterfaces:
         - AssociatePublicIpAddress: "true"
+          DeviceIndex: "0"
           SubnetId: !Ref HelloWorldRailsSubnetAZ1a      
           GroupSet: 
            - !Ref HelloWorldRailsEc2SecurityGroup
