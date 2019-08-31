@@ -37,7 +37,6 @@ Resources:
   HelloWorldRailsEC2Instace:
     Type: AWS::EC2::Instance
     Properties:
-      SubnetId: !Ref HelloWorldRailsSubnetAZ1a
       InstanceType: !Ref InstanceType
       AvailabilityZone: !Select [0, !Ref AvailabilityZoneType]
       ImageId: ami-0d7ed3ddb85b521a6
