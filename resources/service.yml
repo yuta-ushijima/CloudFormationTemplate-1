@@ -52,10 +52,10 @@ Resources:
 
   # ElasticIp定義
   HelloWorldRailsElasticIp:
-    Type: AWS::EC2::EIP
+    Type: AWS::EC2::EIPAssociation
     Properties:
-    Domain: 52.193.73.156
-    DependsOn: HelloWorldRailsEC2Instace
+      EIP: 52.193.73.156
+      InstanceId: !Ref HelloWorldRailsEC2Instace
 
   # Subnet定義
   HelloWorldRailsSubnetAZ1a:
