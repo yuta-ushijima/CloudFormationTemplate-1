@@ -47,21 +47,19 @@ Resources:
       NetworkInterfaces:
         - AssociatePublicIpAddress: "true"
           DeviceIndex: "0"
-          SubnetId: !Ref HelloWorldRailsSubnetAZ1a      
+          SubnetId: Ref HelloWorldRailsSubnetAZ1a      
           GroupSet: 
-           - !Ref HelloWorldRailsEc2SecurityGroup
-      SecurityGroupIds:
-        - !Ref HelloWorldRailsEc2SecurityGroup
+           - Ref HelloWorldRailsEc2SecurityGroup
       Tags:
         - Key: Name
           Value: hello-world-rails-ec2
 
   # ElasticIp定義
-  HelloWorldRailsElasticIp:
-    Type: AWS::EC2::EIP
-    Properties:
-      Domain: 52.197.179.237
-    DependsOn: HelloWorldRailsEC2Instace
+  #HelloWorldRailsElasticIp:
+  #  Type: AWS::EC2::EIP
+  #  Properties:
+  #    Domain: 52.197.179.237
+  #  DependsOn: HelloWorldRailsEC2Instace
 
   # Subnet定義
   HelloWorldRailsSubnetAZ1a:
