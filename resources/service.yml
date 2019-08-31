@@ -47,7 +47,8 @@ Resources:
       NetworkInterfaces:
         - AssociatePublicIpAddress: "true"
           SubnetId: !Ref HelloWorldRailsSubnetAZ1a      
-          GroupSet: !Ref HelloWorldRailsEc2SecurityGroup
+          GroupSet: 
+           - !Ref HelloWorldRailsEc2SecurityGroup
       SecurityGroupIds:
         - !Ref HelloWorldRailsEc2SecurityGroup
       Tags:
