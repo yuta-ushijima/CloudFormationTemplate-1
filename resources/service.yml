@@ -33,6 +33,13 @@ Resources:
         - Key: Name
           Value: hello-world-rails-vpc
 
+  # ElasticIp定義
+  HelloWorldRailsElasticIp:
+    Type: AWS::EC2::EIPAssociation
+    Properties:
+      EIP: 52.193.73.156
+      InstanceId: !Ref HelloWorldRailsEC2Instace
+
   # EC2Instance定義
   HelloWorldRailsEC2Instace:
     Type: AWS::EC2::Instance
@@ -50,12 +57,6 @@ Resources:
         - Key: Name
           Value: hello-world-rails-ec2
 
-  # ElasticIp定義
-  HelloWorldRailsElasticIp:
-    Type: AWS::EC2::EIPAssociation
-    Properties:
-      EIP: 52.193.73.156
-      InstanceId: !Ref HelloWorldRailsEC2Instace
 
   # Subnet定義
   HelloWorldRailsSubnetAZ1a:
